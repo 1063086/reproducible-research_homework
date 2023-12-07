@@ -5,20 +5,11 @@
 Questions 1,2,3 can be found here: https://github.com/nadiaangelab/logistic_growth
 
 4) 
-A: 1. **Function `random_walk`:**
-    - Generates a random walk with a specified number of steps (**`n_steps`**).
-    - Initializes a data frame **`df`** to store x and y coordinates for each step.
-    - Starts at the origin (0,0) and updates coordinates based on a random angle and step size (**`h`**).
-2. **Creating and plotting two random walks:**
-    - Calls **`random_walk`** twice to generate two sets of random walks (**`data1`** and **`data2`**).
-    - Creates separate plots (**`plot1`** and **`plot2`**) for each set of random walks using ggplot2.
-    - Each point in the plot is color-coded based on the step number (**`time`**).
-3. **Observations:**
-    - The paths of the two random walks are different due to the randomness involved in selecting the angle at each step.
-    - The colour gradient in the plots represents the progression of time (steps) along the paths.
-   - Investigate the term **random seeds**. What is a random seed and how does it work? (5 points)
+a) A: 
+The function **random walk** generates a random walk with a specified number of steps (**`n_steps`**). It will create a data frame **`df`** to store x and y coordinates for each step. The walk starts at the origin (0,0) and will change coordinates based on a random angle and step size (**`h`**). The code uses the function **`random_walk`** twice to generate two sets of random walks (**`data1`** and **`data2`**). This creates separate plots (**`plot1`** and **`plot2`**) for each set of random walks using ggplot2. Each point in the plot is colour-coded based on the step number (**`time`**). We can observe that the paths of the two random walks are different due to the randomness involved in selecting the angle at each step. The colour gradient in the plots represents the progression of time (steps) along the paths.
+  
 
-A: Random seeds are used to ensure that results are reproducible. Using them makes sure that anyone who re-runs the code will get the exact same outputs - since setting a particular random seed allows you to produce the same sequence of random numbers each time you run the program.
+b) A: Random seeds are used to ensure that results are reproducible. Using them makes sure that anyone who re-runs the code will get the exact same outputs - since setting a particular random seed allows you to produce the same sequence of random numbers each time you run the program.
 They work since computers can't generate truly random numbers, instead the use  of algorithms called pseudo-random number generators (PRNGs) are employed. These algorithms create sequences of numbers that seem random but are entirely determined by an initial value, known as the seed. When you set a random seed, you're specifiying a start point in the PRNG. If you use the same seed, you'll always get the same sequence of pseudo-random numbers. This is important for making sure others can reproduce work in scientific experiments or simulations, which is crucial for scientific applications. By setting a random seed, this ensures that the random parts of the code will stay the same each time you run it. This is especially important when doing experiments, testing ideas, or analyzing data and means that others both check and continuing working on a project by using the same seed.
 
    - Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked `reproducible-research_homework` repo. (10 points)
