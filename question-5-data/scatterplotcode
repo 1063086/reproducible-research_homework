@@ -1,0 +1,22 @@
+library(ggplot2)
+library(dplyr)
+
+virus_data <- read.csv("Cui_etal2014.csv")
+
+# Logarithmic transformation
+log_V <- log(virus_data$Virion.volume..nm.nm.nm.)
+log_L <- log(virus_data$Genome.length..kb.)
+
+plot_data <- data.frame(log_L, log_V)
+
+# Plotting
+ggplot(plot_data, aes(x = log_L, y = log_V)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = TRUE, color = "blue", fill = "grey", alpha = 0.2) +
+  labs(x = expression(paste("Log[Genome Length (kb)]")),
+       y = expression(paste("Log[Virion Volume (nm"^3*")]"))) +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "black", fill = NA, size = 1),
+        axis.title = element_text(size = 12),
+        axis.text = element_text(size = 10),
+        plot.title = element_text(size = 14, hjust = 0.5))
