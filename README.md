@@ -18,8 +18,8 @@ A: 1. **Function `random_walk`:**
     - The colour gradient in the plots represents the progression of time (steps) along the paths.
    - Investigate the term **random seeds**. What is a random seed and how does it work? (5 points)
 
-A: Random seeds are used to ensure that results are reproducible. Using this parameter makes sure that anyone who re-runs your code will get the exact same outputs - since setting a random seed allows you to produce the same sequence of random numbers each time you run the program.
-It works since computers can't generate truly random numbers, they will use algorithms called pseudo-random number generators (PRNGs). These algorithms create sequences of numbers that seem random but are entirely determined by an initial value, known as the seed. When you set a random seed, your specifiying a start point in the PRNG. If you use the same seed, you'll always get the same sequence of pseudo-random numbers. This is important for making sure others can reproduce your work in scientific experiments or simulations, which is crucial for scientific applications. By setting a random seed, you make sure that the random parts of your work stay the same each time you run it. This is especially important when doing experiments, testing ideas, or analyzing data. Others can check and build on your work by using the same seed.
+A: Random seeds are used to ensure that results are reproducible. Using them makes sure that anyone who re-runs the code will get the exact same outputs - since setting a particular random seed allows you to produce the same sequence of random numbers each time you run the program.
+They work since computers can't generate truly random numbers, instead the use  of algorithms called pseudo-random number generators (PRNGs) are employed. These algorithms create sequences of numbers that seem random but are entirely determined by an initial value, known as the seed. When you set a random seed, you're specifiying a start point in the PRNG. If you use the same seed, you'll always get the same sequence of pseudo-random numbers. This is important for making sure others can reproduce work in scientific experiments or simulations, which is crucial for scientific applications. By setting a random seed, this ensures that the random parts of the code will stay the same each time you run it. This is especially important when doing experiments, testing ideas, or analyzing data and means that others both check and continuing working on a project by using the same seed.
 
    - Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked `reproducible-research_homework` repo. (10 points)
    - Go to your commit history and click on the latest commit. Show the edit you made to the code in the comparison view (add this image to the **README.md** of the fork). (5 points)
@@ -48,11 +48,14 @@ Linear model
 linear_model <- lm(log_V ~ log_L)
 ```
    - Find the exponent ($\alpha$) and scaling factor ($\beta$) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in **Table 2** of the paper, did you find the same values? (10 points)
-Exponent (alpha): 1.515228 
 
+Exponent (alpha): 1.515228 
 Scaling factor (beta): 1181.807 
 
-P-values: 2.279645e-10 6.438498e-10 
+P-values: 2.279645e-10 (for beta) and  6.438498e-10 (for alpha)
+
+The scaling factor in Table 2 of the paper is 1,182, presumably this has been rounded, therefore it is essentially the value. The same can be said for the exponent, which in the paper is 1.52, and the same could be attained from my values once rounded. Given the standard significance level of 0.05, any p-value smaller than 0.05 is considered statistically significant. In this case, both p-values are significantly smaller than 0.05. Therefore we can reject the null hypothesis and conclude that there is strong evidence against the null hypothesis in favor of the alternative hypothesis. In this case, we accept the alternative which suggests that there is a significant relationship between virion volume and genome length, indicating that the size of the viral particles varies in relation to the genome length.
+
    - Write the code to reproduce the figure shown below. (10 points)
 
   <p align="center">
@@ -62,4 +65,13 @@ P-values: 2.279645e-10 6.438498e-10
   - What is the estimated volume of a 300 kb dsDNA virus? (4 points)
 
 **Bonus** (**10 points**) Explain the difference between reproducibility and replicability in scientific research. How can git and GitHub be used to enhance the reproducibility and replicability of your work? what limitations do they have? (e.g. check the platform [protocols.io](https://www.protocols.io/)).
+
+A: While reproducibility will refer to the fact that re-run the same analysis or experiment using the same data and code and should obtain the same results, replicability instead is the principle of doing the same study again but with new data or under different conditions to see if the findings hold. The former emphasises the consistency of the results within the same study, while the latter assesses the robustness of the results and findings across different applications or datasets.
+
+Git allows you to track changes in your code and documents over time. This version control helps in maintaining a history of modifications, making it easier to trace back and understand the evolution of your work. Each commit represents a snapshot of your project, promoting transparency and reproducibility.
+GitHub facilitates collaboration and sharing. By hosting your project on GitHub, others can easily access, contribute, and collaborate. It enhances transparency and reproducibility by providing a centralized global platform for sharing both code and data.
+
+However limitations include the fact that Git and GitHub rely on external servers. If these platforms experience downtime or if your project relies on external factors that may change over time, it can introduce challenges for reproducibility. In addition to this GitHub has limitations on the size of files and repositories. Large datasets or binary files might be impractical to store directly on GitHub. Furthermore while GitHub provides collaboration features, work is made public by default, so if sensitive data is involved in the study, alternative methods of sharing might need to be considered.
+
+
 
