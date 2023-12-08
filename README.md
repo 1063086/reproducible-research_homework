@@ -2,7 +2,7 @@
 
 \# INSERT ANSWERS HERE #
 
-Questions 1,2,3 can be found here: https://github.com/nadiaangelab/logistic_growth
+Questions 1,2,3 can be found here: https://github.com/1063086/logistic_growth
 
 4) 
 a) A: 
@@ -48,7 +48,7 @@ P-values: 2.279645e-10 (for beta) and  6.438498e-10 (for alpha)
 The scaling factor in Table 2 of the paper is 1,182, presumably this has been rounded, therefore it is essentially the value. The same can be said for the exponent, which in the paper is 1.52, and the same could be attained from my values once rounded. Given the standard significance level of 0.05, any p-value smaller than 0.05 is considered statistically significant. In this case, both p-values are significantly smaller than 0.05. Therefore we can reject the null hypothesis and conclude that there is strong evidence against the null hypothesis in favor of the alternative hypothesis. In this case, we accept the alternative which suggests that there is a significant relationship between virion volume and genome length, indicating that the size of the viral particles varies in relation to the genome length.
 
    - Write the code to reproduce the figure shown below. (10 points)
-Code can be found at: https://github.com/nadiaangelab/reproducible-research_homework/blob/76d7521ad11ddef14f01e77d083ef5c28ec3bf40/question-5-data/scatterplotcode
+Code can be found at: https://github.com/1063086/reproducible-research_homework/blob/76d7521ad11ddef14f01e77d083ef5c28ec3bf40/question-5-data/scatterplotcode
 
 My figure:
 
