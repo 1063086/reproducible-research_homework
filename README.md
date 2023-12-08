@@ -13,7 +13,7 @@ They work since computers can't generate truly random numbers, instead the use  
 
  c) Edit the script to make a reproducible simulation of Brownian motion. Commit the file and push it to your forked `reproducible-research_homework` repo. 
  
-**A**: Edited script can be found here: https://github.com/1063086/reproducible-research_homework/question-4-code/random_walk.R
+**A**: Edited script can be found here: https://github.com/1063086/reproducible-research_homework/blob/9e3901ad96dafece5ff11e0ce1dce29580c9f838/question-4-code/random_walk.R
  
  d) Go to your commit history and click on the latest commit. Show the edit you made to the code in the comparison view (add this image to the **README.md** of the fork). 
      
